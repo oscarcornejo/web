@@ -13,10 +13,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+  
   <%= render 'shared/navbar' %>
+
+  <%= render 'shared/facebook_sdk' %>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
   <%= yield %>
 
+  <%= render 'shared/footer' %>
 </body>
 </html>

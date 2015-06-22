@@ -1,28 +1,52 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
-
-<h1>Negocios Disponibles</h1>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <% @publications.each do |publication| %>
-        
-        <%= publication.title %>
-        <%= image_tag(publication.photo, :class => 'img-responsive') %>
-        <%= publication.description %> </br>
-        <%= publication.address %>
-        
-        <div class="buttons" style="margin-top:10px; margin-bottom:10px">
-          <%= link_to 'Show', publication, :class => 'btn' %>
-          <%= link_to 'Edit', edit_publication_path(publication), :class => 'btn' %>
-          <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
-        </div>
-    </div>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <p>...</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">
+      <span class="glyphicon glyphicon-send"> Conócenos!<span>
+    </a></p>
   </div>
-
-    <% end %>
-<br>
 </div>
 
+<p id="notice"><%= notice %></p>
+
 <div class="container">
-  <%= link_to 'New Publication', new_publication_path %>
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Negocios Disponibles</h2>
+    </div>
+    
+    <div class="col-md-3">
+      <h2>
+        <span class="label label-primary">
+          <%= link_to 'Publicar Oferta', new_publication_path, :style => "color:#fff;" %>
+        </span>
+      </h2>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+
+  <hr>
+  
+  <% @publications.each do |publication| %>
+
+  <div class="col-md-3">
+    <div class="thumbnail">        
+      <%= publication.title %>
+      <%= image_tag(publication.photo, :class => 'img-responsive') %>
+      <%= publication.description %></br>
+      <%= publication.address %>
+      
+      <div class="buttons" style="margin-top:10px; margin-bottom:10px;">
+        <%= link_to 'Show', publication, :class => 'btn' %>
+        <%= link_to 'Edit', edit_publication_path(publication), :class => 'btn' %>
+        <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+<br>
 </div>
