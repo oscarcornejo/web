@@ -18,9 +18,13 @@
     
     <div class="col-md-3">
       <h2>
+      <% if user_signed_in? %>
         <span class="label label-primary">
+        
           <%= link_to 'Publicar Oferta', new_publication_path, :style => "color:#fff;" %>
+        
         </span>
+        <% end %>
       </h2>
     </div>
   </div>
@@ -42,7 +46,9 @@
       <div class="buttons" style="margin-top:10px; margin-bottom:10px;">
         <%= link_to 'Show', publication, :class => 'btn' %>
         <%= link_to 'Edit', edit_publication_path(publication), :class => 'btn' %>
-        <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+        <% if user_signed_in? %>
+          <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+        <% end %>
       </div>
     </div>
   </div>
